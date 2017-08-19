@@ -1,6 +1,13 @@
 (function() {
   function HomeCtrl($scope, $firebaseArray) {
-    debugger;
+    var ref = firebase.database().ref();
+    var tasksRef = ref.child("tasks");
+    $scope.list = [];
+    $firebaseArray(tasksRef).$loaded().then(function(data){
+      for(var i = 0; i < data.length; i++) {
+        $scope.list.push(data[i]);
+      }
+    });
   }
 
   angular

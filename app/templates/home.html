@@ -1,1 +1,35 @@
-<h1>Home Page</h1>
+<!DOCTYPE html>
+<html>
+<style>
+table {
+  position: relative;
+  top: 80px;
+  width: 400px;
+  margin: auto;
+}
+table th , td  {
+  font-family: sans-serif;
+  padding: 15px;
+  border-style: none;
+}
+table th {
+  background-color: #c5c5c5;
+  text-align: left;
+}
+table tr {
+  background-color: #f2f1f1;
+}
+</style>
+
+<body>
+
+<table>
+  <th>Current Tasks</th>
+<tr ng-repeat="task in list">
+    <td>{{ task.name }}</td>
+  </tr>
+<!-- <input ng-model="list.task" ng-change="list.$save(task)" /> -->
+</table>
+</script>
+</body>
+</html>
