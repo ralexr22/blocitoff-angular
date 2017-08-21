@@ -9,7 +9,6 @@
       }
     });
   }
-
   angular
     .module('blocitoff')
     .controller('HomeCtrl', ["$scope", "$firebaseArray", HomeCtrl]);
