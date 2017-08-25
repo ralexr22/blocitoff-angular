@@ -11,6 +11,11 @@
              url: '/',
              controller: 'HomeCtrl as home',
              templateUrl: '/templates/home.html'
+         })
+         .state('history', {
+             url: '/history',
+             controller: 'HistCtrl as history',
+             templateUrl: '/templates/history.html'
          });
  }
 

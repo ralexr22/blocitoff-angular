@@ -19,10 +19,6 @@ table th {
 table tr {
   background-color: #f2f1f1;
 }
-/*table.empty {
-  empty-cells: hide;
-  visibility: hidden;
-}*/
 nav {
     clear;
     font-family: sans-serif;
@@ -33,14 +29,14 @@ nav {
 </style>
 <body>
   <nav>
-  <a ui-sref="history">Task History</a>
+  <a ui-sref="home">Active History</a>
 </nav>
   <table>
-    <th>Current Tasks</th>
+    <th>Expired Tasks</th>
     <tr ng-repeat="task in list">
       <td>
-        <div ng-hide="task.isOld" class="ng-hide">
-        <input type="checkbox" ng-model="task.isOld">{{ task.name }}
+        <div ng-show="task.isOld" class="ng-show">
+        <input type="checkbox" ng-model="isOld"><strike> {{ task.name }} </strike>
       </div>
       </td>
     </tr>
