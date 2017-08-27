@@ -20,31 +20,50 @@ table tr {
   background-color: #f2f1f1;
 }
 /*table.empty {
-  empty-cells: hide;
-  visibility: hidden;
+empty-cells: hide;
+visibility: hidden;
 }*/
 nav {
-    clear;
-    font-family: sans-serif;
-    max-width: 160px;
-    margin: 0;
-    padding: 1em;
+  clear;
+  font-family: sans-serif;
+  max-width: 160px;
+  margin: 0;
+  padding: 1em;
 }
 </style>
+
 <body>
   <nav>
-  <a ui-sref="history">Task History</a>
-</nav>
+    <a ui-sref="history">Task History</a>
+  </nav>
   <table>
     <th>Current Tasks</th>
     <tr ng-repeat="task in list">
       <td>
         <div ng-hide="task.isOld" class="ng-hide">
-        <input type="checkbox" ng-model="task.isOld">{{ task.name }}
-      </div>
+          <input type="checkbox" ng-model="$scope.list.push">{{ task.name }}
+        </div>
       </td>
     </tr>
+    <td>  <form action="/">
+    <input type="text" name="NewTask" placeholder="New Task"><br>
+    <button ng-click="HomeCtrl">Submit</button>
+
+    <label for="singleSelect"></label><br>
+    <select name="singleSelect" id="singleSelect" ng-model="data.singleSelect">
+      <option value=""</option> <!-- not selected / blank option -->
+      <option value="{{data.option1}}">Low</option> <!-- interpolation -->
+      <option value="{{data.option2}}">Medium</option>
+      <option value="{{data.option3}}">High</option>
+    </select><br>
+</td>
     <!-- <input ng-model="list.task" ng-change="list.$save(task)" /> -->
   </table>
+
+
+
+
+
+
 </body>
 </html>

@@ -16,6 +16,8 @@
         var itemDate = new Date(item.date).getDate();
         item.isOld = itemDate <= (day-7);
         $scope.list.push(item);
+
+      
       }
     });
   }

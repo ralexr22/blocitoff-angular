@@ -1,5 +1,6 @@
 (function() {
   function HistCtrl($scope, $firebaseArray) {
+
   }
 
 angular
