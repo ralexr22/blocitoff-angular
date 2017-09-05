@@ -38,10 +38,10 @@ nav {
   <table>
     <th>Current Tasks</th>
     <tr ng-repeat="task in list">
-      <td>
-        <div ng-show="task.isOld" class="ng-show">
-        <input type="checkbox" ng-model="task.isOld">{{ task.name }}
-      </div>
+      <td ng-show="task.isOld">
+        <div>
+          <input type="checkbox" ng-model="task.isOld">{{ task.name }}
+        </div>
       </td>
     </tr>
     <!-- <input ng-model="list.task" ng-change="list.$save(task)" /> -->
