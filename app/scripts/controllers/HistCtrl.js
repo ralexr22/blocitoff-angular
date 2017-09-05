@@ -1,8 +1,5 @@
 (function() {
   function HistCtrl($scope, $firebaseArray) {
-<<<<<<< HEAD
-
-=======
     var ref = firebase.database().ref();
     var tasksRef = ref.child("tasks");
 
@@ -13,12 +10,11 @@
         var itemDate = new Date(item.date);
         var sevenDaysAgo = new Date();
         sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
-        item.isOld = (itemDate <= sevenDaysAgo) || item.isCompleted 
+        item.isOld = (itemDate <= sevenDaysAgo) || item.isCompleted
         $scope.list.push(item);
         $scope.newTask ="";
       }
     });
->>>>>>> checkpoint-5
   }
 
 angular
