@@ -19,10 +19,10 @@ table th {
 table tr {
   background-color: #f2f1f1;
 }
-/*table.empty {
+table.empty {
   empty-cells: hide;
   visibility: hidden;
-}*/
+}
 nav {
     clear;
     font-family: sans-serif;
@@ -38,13 +38,23 @@ nav {
   <table>
     <th>Current Tasks</th>
     <tr ng-repeat="task in list">
-      <td>
-        <div ng-hide="task.isOld" class="ng-hide">
-        <input type="checkbox" ng-model="task.isOld">{{ task.name }}
-      </div>
+      <td ng-hide="task.isOld">
+        <div>
+          <input type="checkbox" ng-model="task.isCompleted" ng-change="toggleCompleted(task)">{{task.name}}
+        </div>
       </td>
     </tr>
-    <!-- <input ng-model="list.task" ng-change="list.$save(task)" /> -->
+    <td>
+      <p>New Task</p>
+      <p><small>Priority:
+          <input type="radio" ng-model="newTask.priority" value="0">low</input>
+          <input type="radio" ng-model="newTask.priority" value="1">med</input>
+          <input type="radio" ng-model="newTask.priority" value="2">high</input>
+      </small></p>
+
+            <input ng-model="newTask.name" type="text"></input>
+            <button ng-click="createNewTask()">Submit</input>
+        </td>
   </table>
 </body>
 </html>
