@@ -14,10 +14,9 @@
     $scope.createNewTask = function() {
       var tasks = $firebaseArray(tasksRef);
       tasks.$add($scope.newTask).then(function(item){
-        console.log(item)
         $scope.list.push(item);
       });
-      // set $scope.newTask to a new object.
+
       $scope.newTask = {
         name: "",
         date: (new Date()).toLocaleDateString(),
@@ -40,12 +39,9 @@
         sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
         item.isOld = (itemDate <= sevenDaysAgo) || item.isCompleted
         $scope.list.push(item);
-
-      
       }
     });
   }
-
 
   angular
   .module('blocitoff')

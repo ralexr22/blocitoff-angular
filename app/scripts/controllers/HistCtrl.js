@@ -3,6 +3,12 @@
     var ref = firebase.database().ref();
     var tasksRef = ref.child("tasks");
 
+    $scope.toggleCompleted = function(item) {
+      item.isCompleted = false;
+      var taskRef = tasksRef.child(item.$id);
+      taskRef.update({ isCompleted: false })
+    }
+
     $scope.list = [];
     $firebaseArray(tasksRef).$loaded().then(function(data){
       for(var i = 0; i < data.length; i++) {
